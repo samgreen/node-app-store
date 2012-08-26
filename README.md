@@ -13,7 +13,7 @@ Simply clone this repo in to your node_modules directory and require the file. T
     
     store.searchSoftware( 'fun', function ( results ) {
         var software = results[ 0 ];
-        console.log( '%d. Title: %s', i, software.trackName );
+        console.log( 'Title: %s / Developer: %s', software.trackName, software.artistName );
     });
 
 ### Setup ###

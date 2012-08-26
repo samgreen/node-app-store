@@ -10,15 +10,10 @@ Simply clone this repo in to your node_modules directory and require the file. T
 ### Usage ###
 
     var store = require( 'app-store' );
+    
     store.searchSoftware( 'fun', function ( results ) {
-
-        for ( var i = 0; i < results.length; i++ ) {
-
-            var software = results[ i ];
-
-            console.log( i + '. Title: ' + software.trackName );
-            console.log( i + '. Developer: ' + software.artistName );
-        }
+        var software = results[ 0 ];
+        console.log( '%d. Title: %s', i, software.trackName );
     });
 
 ### Setup ###
@@ -35,8 +30,7 @@ The default country is set to USA. You can change this by calling `setCountry` o
 
 ### Documentation ###
 
-The following search methods are available
-
+The following search methods are available:
 
  * `searchMovie`
  * `searchPodcast`
@@ -47,5 +41,12 @@ The following search methods are available
  * `searchTV`
  * `searchSoftware`
  * `searchEbook`
+
+If you need to look up an item by unique identifier, instead of a general search term, the following methods are available:
+
+ * `lookupById` - Use this function if you have already obtained the unique iTunes id for a specific item.
+ * `lookupByISBN`
+ * `lookupByUPC`
+ * `lookupByArtistAMG`
 
 **Note:** that Apple recommends caching returned search results to reduce strain on their servers. This project does not cache results for you, although an update is planned to implement this feature.
